@@ -1,5 +1,5 @@
 {% for q in cat_qs %}
 
-{{ q.cat_name }}<br>
+<a href="{% url 'menu:cat_detail' cat_name=q.cat_name %}">{{ q.cat_name }}</a><br>
 
 {% endfor %}

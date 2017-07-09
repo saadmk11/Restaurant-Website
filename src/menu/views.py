@@ -3,8 +3,8 @@ from __future__ import unicode_literals
 from .models import Categories, Menu
 from django.shortcuts import render, get_object_or_404
 
-
 # Create your views here.
+
 def menu_list(request): # shows list of menu items & categories
     query_list = Menu.objects.filter(available=True)
     category = Categories.objects.all()

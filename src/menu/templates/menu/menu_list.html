@@ -1,11 +1,17 @@
+
+<h2>Menu Items</h2>
 {% for q in query_list %}
 
-{{ q.item }}<br>
+<a href="{{ q.get_absolute_url }}">{{ q.item }}</a><br>
 
 {% endfor %}
+
 <br><br>
+
+<h2>Categories</h2>
+
 {% for q in category %}
 
-{{ q.cat_name }}<br>
+<a href="{% url 'menu:cat_detail' cat_name=q.cat_name %}">{{ q.cat_name }}</a><br>
 
 {% endfor %}

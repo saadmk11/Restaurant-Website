@@ -1,5 +1,5 @@
 {% for q in menu_qs %}
 
-{{ q.item }}<br>
+<a href="{{ q.get_absolute_url }}">{{ q.item }}</a><br>
 
 {% endfor %}

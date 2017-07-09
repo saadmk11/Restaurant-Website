@@ -4,7 +4,7 @@ from django.db import models
 from django.core.urlresolvers import reverse
 # Create your models here.
 class Categories(models.Model):
-    cat_name = models.CharField(max_length=120)
+    cat_name = models.CharField(max_length=120, unique=True)
 
     def __unicode__(self):
         return self.cat_name
@@ -28,4 +28,4 @@ class Menu(models.Model):
         return self.item
 
     def get_absolute_url(self):
-        return reverse("menu:list", kwargs={"slug": self.slug})
+        return reverse("menu:menu_detail", kwargs={"slug": self.slug})
