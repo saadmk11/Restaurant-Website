@@ -1,5 +1,12 @@
 
+{% include "menu/search.html" %}
+
+{% if request.GET.q %}
+<p>showing search results for "{{ request.GET.q }}"</p><br>
+{% endif %}
+
 <h2>Menu Items</h2>
+
 {% for q in query_list %}
 
 <a href="{{ q.get_absolute_url }}">{{ q.item }}</a><br>

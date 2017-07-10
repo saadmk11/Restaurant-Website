@@ -1,3 +1,5 @@
+{% include "menu/search.html" %}
+
 {% for q in menu_qs %}
 
 <a href="{{ q.get_absolute_url }}">{{ q.item }}</a><br>

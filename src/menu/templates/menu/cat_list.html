@@ -1,3 +1,7 @@
+{% include "menu/search.html" %}
+
+<h2>Categories</h2>
+
 {% for q in cat_qs %}
 
 <a href="{% url 'menu:cat_detail' cat_name=q.cat_name %}">{{ q.cat_name }}</a><br>
