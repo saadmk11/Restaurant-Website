@@ -1,7 +1,9 @@
 {% include "menu/search.html" %}
 
-{% for q in menu_qs %}
+{% for q in query_l %}
 
 <a href="{{ q.get_absolute_url }}">{{ q.item }}</a><br>
 
 {% endfor %}
+<br>
+{% include "menu/paginator.html" %}
