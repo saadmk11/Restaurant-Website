@@ -1,3 +1,7 @@
+{% extends 'index/base.html' %}
+
+{% block content %}
+
 {% include "menu/search.html" %}
 
 {% for q in query_l %}
@@ -7,3 +11,4 @@
 {% endfor %}
 <br>
 {% include "menu/paginator.html" %}
+{% endblock content %}

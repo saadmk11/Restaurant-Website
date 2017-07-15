@@ -1,11 +1,19 @@
+{% extends 'index/base.html' %}
+
+{% block content %}
+
+{% include "index/navbar.html" %}
+
 {% include "menu/search.html" %}
 
 <h2>Categories</h2>
 
 {% for q in query_l %}
 
-<a href="{% url 'menu:cat_detail' cat_name=q.cat_name %}">{{ q.cat_name }}</a><br>
+<a href="{{ q.get_absolute_url }}">{{ q.cat_name }}</a><br>
 
 {% endfor %}
 <br>
 {% include "menu/paginator.html" %}
+
+{% endblock content %}

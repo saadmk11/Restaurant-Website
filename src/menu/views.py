@@ -8,9 +8,9 @@ from django.shortcuts import render, get_object_or_404
 # Create your views here.
 
 def menu_list(request): # shows list of menu items & categories
-    query_list = Menu.objects.filter(available=True)
-    category = Categories.objects.all()
-
+    query_list = Menu.objects.filter(available=True).order_by("-id")
+    category = Categories.objects.all().order_by("-id")
+    
     paginator = Paginator(query_list, 16)
     page = request.GET.get("page")
     try:
@@ -44,7 +44,7 @@ def menu_detail(request, slug=None):
 
 
 def cat_list(request): # shows list of categories
-    cat_qs = Categories.objects.all()
+    cat_qs = Categories.objects.all().order_by("-id")
 
     paginator = Paginator(cat_qs, 16)
     page = request.GET.get("page")

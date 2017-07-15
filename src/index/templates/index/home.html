@@ -1,3 +1,10 @@
-<a href="{% url 'menu:menu_list' %}">Menu</a><br>
-<a href="{% url 'menu:cat_list' %}">Categories</a><br>
-<a href="{% url 'about' %}">About US</a>
+{% extends 'index/base.html' %}
+
+{% block content %}
+<div class="jumbotron">
+  <h1>Restaurant Website!</h1>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget aliquet metus, at dignissim elit. Nunc et sem sapien. Suspendisse pharetra porttitor dui et hendrerit. Phasellus malesuada, augue ut vulputate fringilla, felis risus gravida nulla, id consectetur est mauris id purus. Nulla facilisi.</p>
+  <p><a class="btn btn-primary btn-lg" href="{% url 'menu:menu_list' %}" role="button">Our Menu</a>
+  <a class="btn btn-default btn-lg" href="{% url 'contact_us' %}" role="button">Contact US</a></p>
+</div>
+{% endblock content %}

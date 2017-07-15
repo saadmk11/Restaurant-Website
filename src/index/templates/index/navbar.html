@@ -1,0 +1,35 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="{% url 'home' %}">Restaurant</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a></li>
+        <li><a href="{% url 'menu:menu_list' %}">Menu</a></li>
+        <li class="dropdown">
+          <a href="{% url 'menu:cat_list' %}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categories <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            {% for q in query_l %}
+              <li><a href="{{ q.get_absolute_url }}">{{ q.cat_name }}</a></li>
+              <li role="separator" class="divider"></li>
+            {% endfor %}
+          </ul>
+        </li>
+      </ul>
+      
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="{% url 'about' %}">About Us</a></li>
+        <li><a href="{% url 'contact_us' %}">Contact Us</a></li> 
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div>
+</nav>

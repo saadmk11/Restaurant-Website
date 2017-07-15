@@ -18,10 +18,12 @@ from django.conf.urls import include, url
 from django.conf.urls.static import static
 from django.contrib import admin
 from index.views import home, about
+from contact.views import contact
 
 urlpatterns = [
     url(r'^$', home, name="home"),
-    url(r'^about$', about, name="about"),
+    url(r'^about/$', about, name="about"),
+    url(r'^contact/$', contact, name="contact_us"),
     url(r'^admin/', admin.site.urls),
     url(r'^menu/', include('menu.urls', namespace='menu')),
 
