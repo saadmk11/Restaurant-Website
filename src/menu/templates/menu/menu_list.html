@@ -11,33 +11,38 @@
 
 {% endif %}
 
+ <div class="col-lg-3">
+<h2>Categories</h2>
+<div class="list-group">
+{% for q in category %}
+  <a href="{{ q.get_absolute_url }}" class="list-group-item">{{ q.cat_name }}</a>
+{% endfor %}
+</div>
+</div>
+
+<div class="col-lg-9">
 <h2>Menu Items</h2>
-<div class="row">
-
 {% for q in query_l %}
-
-<div class="col-sm-6">
-  <div class="col-sm-5 ">
+<div class="col-sm-5 col-md-4">
+<span class="pull-right">
     <div class="thumbnail">
-      <img src="..." alt="...">
+    {% if q.img %}
+      <img src="{{ q.img.url }}" alt="">
+      {% endif %}
       <div class="caption">
         <h3>{{ q.item }}</h3>
         <p>Price: {{ q.price }}$</p>
         <p><a href="{{ q.get_absolute_url }}" class="btn btn-default" role="button">Details</a></p>
       </div>
     </div>
+    </span>
   </div>
-</div>
 {% endfor %}
 </div>
-<br>
+<div>
 {% include "menu/paginator.html" %}
+</div>
 
-<h2>Categories</h2>
+<br>
 
-{% for q in category %}
-
-<a href="{{ q.get_absolute_url }}">{{ q.cat_name }}</a><br>
-{% endfor %}
-
-{% endblock content %}
+{% endblock %}

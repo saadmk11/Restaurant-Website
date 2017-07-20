@@ -91,6 +91,42 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "src/index/templates/index/navbar.html",
+			"settings":
+			{
+				"buffer_size": 1660,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/index/templates/index/base.html",
+			"settings":
+			{
+				"buffer_size": 1159,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/index/templates/index/home.html",
+			"settings":
+			{
+				"buffer_size": 1175,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/menu/templates/menu/menu_list.html",
+			"settings":
+			{
+				"buffer_size": 979,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -125,37 +161,39 @@
 	"expanded_folders":
 	[
 		"/home/saad/restaurant/src",
-		"/home/saad/restaurant/src/contact/templates",
-		"/home/saad/restaurant/src/contact/templates/contact",
 		"/home/saad/restaurant/src/index",
 		"/home/saad/restaurant/src/index/templates",
 		"/home/saad/restaurant/src/index/templates/index",
 		"/home/saad/restaurant/src/menu",
 		"/home/saad/restaurant/src/menu/templates",
-		"/home/saad/restaurant/src/menu/templates/menu"
+		"/home/saad/restaurant/src/menu/templates/menu",
+		"/home/saad/restaurant/src/restaurant",
+		"/home/saad/restaurant/src/static"
 	],
 	"file_history":
 	[
+		"/home/saad/restaurant/src/index/views.py",
+		"/home/saad/restaurant/src/menu/templates/menu/cat_detail.html",
+		"/home/saad/restaurant/src/menu/templates/menu/cat_list.html",
 		"/home/saad/restaurant/src/menu/templates/menu/menu_list.html",
 		"/home/saad/restaurant/src/index/templates/index/base.html",
-		"/home/saad/restaurant/src/index/templates/index/navbar.html",
+		"/home/saad/restaurant/src/menu/templates/menu/search.html",
+		"/home/saad/restaurant/src/index/templates/index/home.html",
 		"/home/saad/restaurant/src/menu/models.py",
-		"/home/saad/restaurant/src/index/templates/index/about.html",
-		"/home/saad/restaurant/src/menu/templates/menu/cat_list.html",
-		"/home/saad/restaurant/src/menu/templates/menu/cat_detail.html",
+		"/home/saad/restaurant/src/static/css/main.css",
 		"/home/saad/restaurant/src/menu/templates/menu/menu_detail.html",
-		"/home/saad/restaurant/src/index/views.py",
+		"/home/saad/restaurant/src/static/css/base.css",
+		"/home/saad/restaurant/src/restaurant/urls.py",
+		"/home/saad/restaurant/src/index/templates/index/navbar.html",
+		"/home/saad/restaurant/src/contact/forms.py",
+		"/home/saad/restaurant/src/index/templates/index/about.html",
 		"/home/saad/restaurant/src/contact/views.py",
 		"/home/saad/restaurant/src/restaurant/settings.py",
-		"/home/saad/restaurant/src/contact/forms.py",
 		"/home/saad/restaurant/src/contact/templates/contact/contact.html",
-		"/home/saad/restaurant/src/index/templates/index/home.html",
-		"/home/saad/restaurant/src/restaurant/urls.py",
 		"/home/saad/restaurant/src/menu/views.py",
 		"/home/saad/restaurant/src/menu/templates/menu/base.html",
 		"/home/saad/restaurant/src/menu/templates/menu/paginator.html",
 		"/home/saad/restaurant/src/menu/templates/menu/h.html",
-		"/home/saad/restaurant/src/menu/templates/menu/search.html",
 		"/home/saad/restaurant/src/menu/urls.py",
 		"/home/saad/restaurant/src/menu/templates/menu/menu.html",
 		"/home/saad/restaurant/src/menu/admin.py",
@@ -286,8 +324,127 @@
 	"groups":
 	[
 		{
+			"selected": 2,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "src/index/templates/index/navbar.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1660,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1401,
+								1401
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/index/templates/index/base.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1159,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								697,
+								697
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/index/templates/index/home.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1175,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1141,
+								1141
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "src/menu/templates/menu/menu_list.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 979,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								450,
+								450
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 54.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
 			]
 		}
 	],

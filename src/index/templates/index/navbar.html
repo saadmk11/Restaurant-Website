@@ -13,17 +13,18 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a></li>
+        <li><a href="{% url 'home' %}">Home </a></li>
         <li><a href="{% url 'menu:menu_list' %}">Menu</a></li>
-        <li class="dropdown">
+        <li><a href="{% url 'menu:cat_list' %}">Categories</a></li>
+       <!--  <li class="dropdown">
           <a href="{% url 'menu:cat_list' %}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categories <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            {% for q in query_l %}
-              <li><a href="{{ q.get_absolute_url }}">{{ q.cat_name }}</a></li>
+            {% for obj in nav_qs %}
+              <li><a href="{{ obj.get_absolute_url }}">{{ obj.cat_name }}</a></li>
               <li role="separator" class="divider"></li>
             {% endfor %}
           </ul>
-        </li>
+        </li> -->
       </ul>
       
       <ul class="nav navbar-nav navbar-right">

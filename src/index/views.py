@@ -2,10 +2,13 @@
 from __future__ import unicode_literals
 
 from django.shortcuts import render
+from menu.models import Categories, Menu
 
 # Create your views here.
 def home(request):
-    return render(request, "index/home.html", {})
+    queryset = Menu.objects.filter(available=True, featured=True).order_by("-id")[:4]
+    return render(request, "index/home.html", { "queryset": queryset })
 
 def about(request):
     return render(request, "index/about.html", {})
+

@@ -3,12 +3,22 @@
 {% block content %}
 
 {% include "menu/search.html" %}
-
+<div class="row">
 {% for q in query_l %}
-
-<a href="{{ q.get_absolute_url }}">{{ q.item }}</a><br>
-
+<div class="col-sm-5 col-md-3">
+    <div class="thumbnail">
+    {% if q.img %}
+      <img src="{{ q.img.url }}" alt="...">
+      {% endif %}
+      <div class="caption">
+        <h3>{{ q.item }}</h3>
+        <p>Price: {{ q.price }}$</p>
+        <p><a href="{{ q.get_absolute_url }}" class="btn btn-default" role="button">Details</a></p>
+      </div>
+    </div>
+  </div>
 {% endfor %}
+</div>
 <br>
 {% include "menu/paginator.html" %}
 {% endblock content %}

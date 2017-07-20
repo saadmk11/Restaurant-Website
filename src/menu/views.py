@@ -9,9 +9,16 @@ from django.shortcuts import render, get_object_or_404
 
 def menu_list(request): # shows list of menu items & categories
     query_list = Menu.objects.filter(available=True).order_by("-id")
-    category = Categories.objects.all().order_by("-id")
+    category = Categories.objects.all()
     
-    paginator = Paginator(query_list, 16)
+    query = request.GET.get("q")   
+    if query:
+        query_list = query_list.filter(
+            Q(item__icontains=query)|
+            Q(category__cat_name__icontains=query)
+            ).distinct()
+
+    paginator = Paginator(query_list, 12)
     page = request.GET.get("page")
     try:
         query_l = paginator.page(page)
@@ -20,16 +27,8 @@ def menu_list(request): # shows list of menu items & categories
     except EmptyPage:
         query_l = paginator.page(paginator.num_pages)
 
-    query = request.GET.get("q")   
-    if query:
-        query_list = query_list.filter(
-            Q(item__icontains=query)|
-            Q(category__cat_name__icontains=query)
-            ).distinct()
-
-    context = { 'query_list': query_list,
-                "query_l": query_l,
-                'category': category,
+    context = { "query_l": query_l,
+                "category": category,
                 "title": "Items"
             }
 
@@ -44,9 +43,15 @@ def menu_detail(request, slug=None):
 
 
 def cat_list(request): # shows list of categories
-    cat_qs = Categories.objects.all().order_by("-id")
+    cat_qs = Categories.objects.all()
 
-    paginator = Paginator(cat_qs, 16)
+    query = request.GET.get("q")
+    if query:
+        cat_qs = cat_qs.filter(
+            Q(cat_name__icontains=query)
+            ).distinct()
+
+    paginator = Paginator(cat_qs, 12)
     page = request.GET.get("page")
     try:
         query_l = paginator.page(page)
@@ -55,14 +60,9 @@ def cat_list(request): # shows list of categories
     except EmptyPage:
         query_l = paginator.page(paginator.num_pages)
 
-    query = request.GET.get("q")
-    if query:
-        cat_qs = cat_qs.filter(
-            Q(cat_name__icontains=query)
-            ).distinct()
 
-    context = { "cat_qs": cat_qs,
-                "query_l": query_l,
+
+    context = { "query_l": query_l,
                 "title": "Categories"
                  }
 
@@ -73,7 +73,13 @@ def cat_detail(request, cat_name=None): # shows list of items in a category
     categories = get_object_or_404(Categories, cat_name__iexact=cat_name)
     menu_qs = categories.menu_set.filter(available=True)
 
-    paginator = Paginator(menu_qs, 16)
+    query = request.GET.get("q")
+    if query:
+        menu_qs = menu_qs.filter(
+            Q(item__icontains=query)
+            ).distinct()
+
+    paginator = Paginator(menu_qs, 12)
     page = request.GET.get("page")
     try:
         query_l = paginator.page(page)
@@ -82,16 +88,10 @@ def cat_detail(request, cat_name=None): # shows list of items in a category
     except EmptyPage:
         query_l = paginator.page(paginator.num_pages)
 
-    query = request.GET.get("q")
-    if query:
-        menu_qs = menu_qs.filter(
-            Q(item__icontains=query)
-            ).distinct()
 
-    context = { "menu_qs": menu_qs,
-                "query_l": query_l,
+
+    context = { "query_l": query_l,
                 "title": "Items"
-
                  }
 
     return render(request, "menu/cat_detail.html", context)

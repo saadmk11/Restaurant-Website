@@ -25,6 +25,7 @@ class Menu(models.Model):
     ingredients = models.CharField(max_length=256)
     nutrition = models.CharField(max_length=256)
     available = models.BooleanField(default=True)
+    featured = models.BooleanField(default=False)
     slug = models.SlugField(unique=True)
     img = models.ImageField(null=True, blank=True, height_field="height_field", width_field="width_field")
     height_field = models.IntegerField(default=600)
