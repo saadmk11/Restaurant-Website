@@ -1,10 +1,36 @@
 {% extends 'index/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %} Contact | {{ block.super }}{% endblock title %}
 
 {% block content %}
-<h1>Contact</h1>
+
+<div class="col-lg-8">
+<h1>Info</h1>
+<hr>
+{% for q in info %}
+<h5><strong>Address: </strong>{{ q.address }}</h5>
+
+<h5><strong>Email: </strong>{{ q.email }}</h5>
+<h5><strong>Tel: </strong>{{ q.tel }}</h5>
+<br>
+<a href="{{ q.fb }}"><img data-type="image" style="width: 30px; height: 30px; object-fit: cover;" src="{{ q.fb_icon.url }}"></a>&nbsp;
+<a href="{{ q.twitter }}"><img data-type="image" style="width: 30px; height: 30px; object-fit: cover;" src="{{ q.twitter_icon.url }}"></a>&nbsp;
+<a href="{{ q.instagram }}"><img data-type="image" style="width: 30px; height: 30px; object-fit: cover;" src="{{ q.instagram_icon.url }}"></a>
+{% endfor %}
+</div>
+
+
+<div class="col-lg-4">
+<h1>Contact US</h1>
 <form role="form" action="" method="post">
     {% csrf_token %}
-    {{ form.as_p }}
+    {{ form|crispy }}
     <button type="submit">Submit</button>
 </form>
-{% endblock %}
+</div>
+
+{% endblock content %}
+
+
+

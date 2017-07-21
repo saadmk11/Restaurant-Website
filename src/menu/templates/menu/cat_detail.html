@@ -1,8 +1,9 @@
 {% extends 'index/base.html' %}
-
+{% block title %} {{ categories.cat_name }} | {{ block.super }}{% endblock title %}
 {% block content %}
 
 {% include "menu/search.html" %}
+<h1>{{ categories.cat_name }}</h1>
 <div class="row">
 {% for q in query_l %}
 <div class="col-sm-5 col-md-3">

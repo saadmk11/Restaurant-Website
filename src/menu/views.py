@@ -37,7 +37,11 @@ def menu_list(request): # shows list of menu items & categories
 
 def menu_detail(request, slug=None):
     query = get_object_or_404(Menu, available=True, slug=slug)
-    context = { "query": query, }
+    recommended = Menu.objects.filter(available=True, category=query.category).order_by("?")[:4]
+    context = { "query": query,
+                "recommended": recommended,
+
+                }
 
     return render(request, 'menu/menu_detail.html', context)
 
@@ -91,7 +95,8 @@ def cat_detail(request, cat_name=None): # shows list of items in a category
 
 
     context = { "query_l": query_l,
-                "title": "Items"
+                "title": "Items",
+                "categories": categories,
                  }
 
     return render(request, "menu/cat_detail.html", context)

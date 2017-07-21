@@ -5,3 +5,8 @@
 </form>
 </div>
 <hr>
+{% if request.GET.q %}
+
+<p>showing search results for "{{ request.GET.q }}"</p><br>
+
+{% endif %}
