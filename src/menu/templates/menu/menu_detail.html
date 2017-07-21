@@ -42,7 +42,7 @@
 
                         <h4 class="price">Available</h4>
                         <p class="product-description">{{ query.info }}</p>
-                        <h4 ><b>Current Price: </b><span class="price">{{ query.price }}$</span></h4>
+                        <h4 ><b>Current Price: </b><span class="price">${{ query.price }}</span></h4>
                         <p class="ingredients"><strong>Ingredients: </strong>{{ query.ingredients }}</p>
                         <p class="ingredients"><strong>Nutrition: </strong>{{ query.nutrition }}</p>
 
@@ -75,10 +75,10 @@
 <div class="col-sm-5 col-md-3">
     <div class="thumbnail">
     {% if q.img %}
-      <img src="{{ q.img.url }}" alt="...">
+      <img src="{{ q.img.url }}" alt="..." style="width:232px;height:192px;">
       {% endif %}
       <div class="caption">
-        <h3>{{ q.item }}</h3>
+        <h5><b>{{ q.item }}</b></h5>
         <p>Price: {{ q.price }}$</p>
         <p><a href="{{ q.get_absolute_url }}" class="btn btn-default" role="button">Details</a></p>
       </div>

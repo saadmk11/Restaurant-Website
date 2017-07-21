@@ -6,7 +6,7 @@ from menu.models import Categories, Menu
 
 # Create your views here.
 def home(request):
-    queryset = Menu.objects.filter(available=True, featured=True).order_by("-id")[:4]
+    queryset = Menu.objects.filter(available=True, featured=True).order_by("?")[:4]
     return render(request, "index/home.html", { "queryset": queryset })
 
 def about(request):

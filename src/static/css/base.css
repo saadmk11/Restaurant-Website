@@ -1,6 +1,17 @@
 img {
   max-width: 100%; }
 
+.thumbnail {
+  width:240px;
+  height:340px;
+}
+.icon {
+  width: 30px; 
+  height: 30px; 
+  object-fit: cover;
+
+}
+
 .preview {
   display: -webkit-box;
   display: -webkit-flex;

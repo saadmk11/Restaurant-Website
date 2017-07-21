@@ -8,5 +8,9 @@ class MenuAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('item',)}
 
 
-admin.site.register(Categories)
+class CategoriesAdmin(admin.ModelAdmin):
+    prepopulated_fields = {'slug': ('cat_name',)}
+
+
+admin.site.register(Categories, CategoriesAdmin)
 admin.site.register(Menu, MenuAdmin)

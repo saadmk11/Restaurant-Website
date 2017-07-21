@@ -10,20 +10,23 @@
 
 <div class="container">
     <h2>Featured Items</h2>
+    <hr>
 {% for q in queryset %}
 <div class="col-sm-5 col-md-3">
     <div class="thumbnail">
     {% if q.img %}
-      <img src="{{ q.img.url }}" alt="...">
+      <img src="{{ q.img.url }}" alt="..." style="width:232px;height:192px;">
       {% endif %}
       <div class="caption">
-        <h3>{{ q.item }}</h3>
+        <h5><b>{{ q.item }}</b></h5>
         <p>Price: {{ q.price }}$</p>
         <p><a href="{{ q.get_absolute_url }}" class="btn btn-default" role="button">Details</a></p>
       </div>
     </div>
   </div>
 {% endfor %}
+<div>
 <a href="{% url 'menu:menu_list' %}">View All Items ---></a>
+</div>
 </div>
 {% endblock content %}

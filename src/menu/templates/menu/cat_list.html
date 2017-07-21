@@ -5,30 +5,22 @@
 {% include "menu/search.html" %}
 
 <h2>Categories</h2>
-
+<hr>
 <div class="row">
 {% for q in query_l %}
 <div class="col-sm-5 col-md-3">
-    <div class="thumbnail">
+    <div class="thumbnail" >
     {% if q.cat_img %}
-      <img src="{{ q.cat_img.url }}" alt="...">
+      <img src="{{ q.cat_img.url }}" alt="..." style="width:232px;height:192px;">
       {% endif %}
       <div class="caption">
-        <h3>{{ q.cat_name }}</h3>
+        <h5><b>{{ q.cat_name }}</b></h5>
         <p><a href="{{ q.get_absolute_url }}" class="btn btn-default" role="button">Details</a></p>
       </div>
     </div>
   </div>
 {% endfor %}
 </div>
-
-
-
-
-
-
-
-
 <br>
 {% include "menu/paginator.html" %}
 

@@ -5,6 +5,7 @@ from django.core.urlresolvers import reverse
 # Create your models here.
 class Categories(models.Model):
     cat_name = models.CharField(max_length=120, unique=True)
+    slug = models.SlugField(unique=True)
     cat_img = models.ImageField(null=True, blank=True, height_field="height_field", width_field="width_field")
     height_field = models.IntegerField(default=600)
     width_field = models.IntegerField(default=600)
@@ -13,7 +14,7 @@ class Categories(models.Model):
         return self.cat_name
 
     def get_absolute_url(self):
-        return reverse("menu:cat_detail", kwargs={"cat_name": self.cat_name})
+        return reverse("menu:cat_detail", kwargs={"slug": self.slug})
         
 
 class Menu(models.Model):

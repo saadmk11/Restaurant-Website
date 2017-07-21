@@ -9,20 +9,37 @@
 <h1>Info</h1>
 <hr>
 {% for q in info %}
-<h5><strong>Address: </strong>{{ q.address }}</h5>
+<h4><strong>Address: </strong>{{ q.address }}</h4>
 
-<h5><strong>Email: </strong>{{ q.email }}</h5>
-<h5><strong>Tel: </strong>{{ q.tel }}</h5>
+<h4><strong>Email: </strong>{{ q.email }}</h4>
+<h4><strong>Tel: </strong>{{ q.tel }}</h4>
 <br>
-<a href="{{ q.fb }}"><img data-type="image" style="width: 30px; height: 30px; object-fit: cover;" src="{{ q.fb_icon.url }}"></a>&nbsp;
-<a href="{{ q.twitter }}"><img data-type="image" style="width: 30px; height: 30px; object-fit: cover;" src="{{ q.twitter_icon.url }}"></a>&nbsp;
-<a href="{{ q.instagram }}"><img data-type="image" style="width: 30px; height: 30px; object-fit: cover;" src="{{ q.instagram_icon.url }}"></a>
+<a href="{{ q.fb }}"><img class="icon" data-type="image" src="{{ q.fb_icon.url }}"></a>&nbsp;
+<a href="{{ q.twitter }}"><img data-type="image" src="{{ q.twitter_icon.url }}"></a>&nbsp;
+<a href="{{ q.instagram }}"><img data-type="image" src="{{ q.instagram_icon.url }}"></a>
 {% endfor %}
+<hr>
+<h1>Location</h1>
+
+<div id="googleMap" style="width:100%;width:600px;height:300px; "></div>
+
+<script>
+function myMap() {
+var mapProp= {
+    center:new google.maps.LatLng(51.508742,-0.120850),
+    zoom:10,
+};
+var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+}
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&callback=myMap"></script>
 </div>
 
 
 <div class="col-lg-4">
 <h1>Contact US</h1>
+<hr>
 <form role="form" action="" method="post">
     {% csrf_token %}
     {{ form|crispy }}

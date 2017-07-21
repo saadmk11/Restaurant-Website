@@ -40,7 +40,6 @@ def menu_detail(request, slug=None):
     recommended = Menu.objects.filter(available=True, category=query.category).order_by("?")[:4]
     context = { "query": query,
                 "recommended": recommended,
-
                 }
 
     return render(request, 'menu/menu_detail.html', context)
@@ -64,8 +63,6 @@ def cat_list(request): # shows list of categories
     except EmptyPage:
         query_l = paginator.page(paginator.num_pages)
 
-
-
     context = { "query_l": query_l,
                 "title": "Categories"
                  }
@@ -73,8 +70,8 @@ def cat_list(request): # shows list of categories
     return render(request, "menu/cat_list.html", context)
 
 
-def cat_detail(request, cat_name=None): # shows list of items in a category
-    categories = get_object_or_404(Categories, cat_name__iexact=cat_name)
+def cat_detail(request, slug=None): # shows list of items in a category
+    categories = get_object_or_404(Categories, slug=slug)
     menu_qs = categories.menu_set.filter(available=True)
 
     query = request.GET.get("q")
@@ -91,8 +88,6 @@ def cat_detail(request, cat_name=None): # shows list of items in a category
         query_l = paginator.page(1)
     except EmptyPage:
         query_l = paginator.page(paginator.num_pages)
-
-
 
     context = { "query_l": query_l,
                 "title": "Items",
