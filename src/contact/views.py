@@ -15,7 +15,7 @@ def contact(request):
         contact_email = form.cleaned_data['contact_email']
         message = form.cleaned_data['message']
         try:
-            send_mail(subject, message, contact_email, ['yy@hotmail.com'])
+            send_mail(subject, message, contact_email, ['admin@hotmail.com'])
         except BadHeaderError:
             return HttpResponse('Invalid header found.')
         return redirect('home')
@@ -23,4 +23,5 @@ def contact(request):
                "form": form
                 }
     return render(request, "contact/contact.html", context)
+
 

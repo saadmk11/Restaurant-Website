@@ -1,18 +1,18 @@
 <div style="float: right;">
 <div class="pagination">
-    <span class="step-links">
+    <em class="step-links">
         {% if query_l.has_previous %}
             <a href="?page={{ query_l.previous_page_number }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}">previous</a>
         {% endif %}
 
-        <span class="current">
+        &nbsp;<em class="current">
             Page {{ query_l.number }} of {{ query_l.paginator.num_pages }}.
-        </span>
+        </em>&nbsp;
 
         {% if query_l.has_next %}
             <a href="?page={{ query_l.next_page_number }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}">next</a>
         {% endif %}
-    </span>
+    </em>
 </div>
 </div>
 
