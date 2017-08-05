@@ -1,8 +1,9 @@
+
 <div style="float: right;">
-<form method='GET' action=''>
-<input type='text' name='q' placeholder='Search {{ title }}' value='{{ request.GET.q }}'/>
-<input type='submit' value='Search' />
-</form>
+    <form method='GET' action=''>
+        <input type='text' name='q' placeholder='Search' value='{{ request.GET.q }}'/>
+        <input class="btn btn-primary" type='submit' value='Search' />
+    </form>
 </div>
 <hr>
 {% if request.GET.q %}

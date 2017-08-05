@@ -15,7 +15,5 @@ class CategoriesAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('cat_name',)}
     search_fields = ['cat_name']
 
-
-
 admin.site.register(Categories, CategoriesAdmin)
 admin.site.register(Menu, MenuAdmin)

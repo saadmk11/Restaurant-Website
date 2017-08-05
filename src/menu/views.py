@@ -6,7 +6,6 @@ from django.db.models import Q
 from django.shortcuts import render, get_object_or_404
 
 # Create your views here.
-
 def menu_list(request): # shows list of menu items & categories
     query_list = Menu.objects.filter(available=True).order_by("-id")
     category = Categories.objects.all()
@@ -31,9 +30,7 @@ def menu_list(request): # shows list of menu items & categories
                 "category": category,
                 "title": "Items"
             }
-
     return render(request, 'menu/menu_list.html', context)
-
 
 def menu_detail(request, slug=None):
     query = get_object_or_404(Menu, available=True, slug=slug)
@@ -41,9 +38,7 @@ def menu_detail(request, slug=None):
     context = { "query": query,
                 "recommended": recommended,
                 }
-
     return render(request, 'menu/menu_detail.html', context)
-
 
 def cat_list(request): # shows list of categories
     cat_qs = Categories.objects.all()
@@ -66,9 +61,7 @@ def cat_list(request): # shows list of categories
     context = { "query_l": query_l,
                 "title": "Categories"
                  }
-
     return render(request, "menu/cat_list.html", context)
-
 
 def cat_detail(request, slug=None): # shows list of items in a category
     categories = get_object_or_404(Categories, slug=slug)
@@ -93,7 +86,4 @@ def cat_detail(request, slug=None): # shows list of items in a category
                 "title": "Items",
                 "categories": categories,
                  }
-
     return render(request, "menu/cat_detail.html", context)
-
-

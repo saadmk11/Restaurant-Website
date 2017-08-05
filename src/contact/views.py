@@ -1,11 +1,10 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-from django.core.mail import send_mail, BadHeaderError
-from django.http import HttpResponse, HttpResponseRedirect
-from django.shortcuts import render, redirect
 from .forms import ContactForm
 from .models import ContactInfo
-
+from django.core.mail import send_mail, BadHeaderError
+from django.http import HttpResponse
+from django.shortcuts import render, redirect
 
 def contact(request):
     info = ContactInfo.objects.all()
@@ -23,5 +22,3 @@ def contact(request):
                "form": form
                 }
     return render(request, "contact/contact.html", context)
-
-

@@ -3,10 +3,14 @@ from __future__ import unicode_literals
 from django.db import models
 from django.core.urlresolvers import reverse
 # Create your models here.
+
 class Categories(models.Model):
     cat_name = models.CharField(max_length=120, unique=True)
     slug = models.SlugField(unique=True)
-    cat_img = models.ImageField(null=True, blank=True, height_field="height_field", width_field="width_field")
+    cat_img = models.ImageField(null=True, 
+                                blank=True, 
+                                height_field="height_field", 
+                                width_field="width_field")
     height_field = models.IntegerField(default=600)
     width_field = models.IntegerField(default=600)
 
@@ -28,7 +32,10 @@ class Menu(models.Model):
     available = models.BooleanField(default=True)
     featured = models.BooleanField(default=False)
     slug = models.SlugField(unique=True)
-    img = models.ImageField(null=True, blank=True, height_field="height_field", width_field="width_field")
+    img = models.ImageField(null=True, 
+                            blank=True, 
+                            height_field="height_field", 
+                            width_field="width_field")
     height_field = models.IntegerField(default=600)
     width_field = models.IntegerField(default=600)
 
