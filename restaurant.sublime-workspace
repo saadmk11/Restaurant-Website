@@ -91,23 +91,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "src/menu/admin.py",
-			"settings":
-			{
-				"buffer_size": 658,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/menu/views.py",
-			"settings":
-			{
-				"buffer_size": 2908,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -139,36 +122,31 @@
 		"side_bar_visible": false,
 		"status_bar_visible": false
 	},
-	"expanded_folders":
-	[
-		"/home/saad/restaurant/src",
-		"/home/saad/restaurant/src/menu"
-	],
 	"file_history":
 	[
+		"/home/saad/restaurant/src/menu/admin.py",
+		"/home/saad/restaurant/src/index/templates/index/base.html",
+		"/home/saad/restaurant/src/restaurant/settings.py",
+		"/home/saad/restaurant/src/menu/templates/menu/menu_detail.html",
+		"/home/saad/restaurant/src/menu/templates/menu/search.html",
+		"/home/saad/restaurant/src/contact/templates/contact/contact.html",
 		"/home/saad/restaurant/src/menu/views.py",
 		"/home/saad/restaurant/src/menu/models.py",
 		"/home/saad/restaurant/src/menu/urls.py",
-		"/home/saad/restaurant/src/menu/admin.py",
 		"/home/saad/restaurant/src/index/views.py",
-		"/home/saad/restaurant/src/index/templates/index/base.html",
 		"/home/saad/restaurant/src/index/templates/index/about.html",
 		"/home/saad/restaurant/src/contact/models.py",
 		"/home/saad/restaurant/src/contact/views.py",
 		"/home/saad/restaurant/src/contact/forms.py",
-		"/home/saad/restaurant/src/restaurant/settings.py",
 		"/home/saad/restaurant/src/menu/templates/menu/paginator.html",
 		"/home/saad/restaurant/src/contact/templates/contact/thanks.html",
 		"/home/saad/restaurant/src/index/templates/index/home.html",
-		"/home/saad/restaurant/src/menu/templates/menu/menu_detail.html",
 		"/home/saad/restaurant/src/menu/templates/menu/cat_list.html",
 		"/home/saad/restaurant/src/menu/templates/menu/cat_detail.html",
 		"/home/saad/restaurant/src/menu/templates/menu/menu_list.html",
 		"/home/saad/restaurant/src/static/css/base.css",
-		"/home/saad/restaurant/src/contact/templates/contact/contact.html",
 		"/home/saad/restaurant/src/restaurant/urls.py",
 		"/home/saad/restaurant/src/contact/admin.py",
-		"/home/saad/restaurant/src/menu/templates/menu/search.html",
 		"/home/saad/restaurant/src/index/templates/index/footer.html",
 		"/home/saad/restaurant/src/index/templates/index/navbar.html",
 		"/home/saad/restaurant/src/static/css/main.css",
@@ -309,67 +287,8 @@
 	"groups":
 	[
 		{
-			"selected": 1,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "src/menu/admin.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 658,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								657,
-								657
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "src/menu/views.py",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 2908,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1296.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -447,7 +366,7 @@
 	{
 	},
 	"show_minimap": false,
-	"show_open_files": false,
+	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
 	"side_bar_width": 200.0,

@@ -7,7 +7,7 @@ from django.shortcuts import render, get_object_or_404
 
 # Create your views here.
 def menu_list(request): # shows list of menu items & categories
-    query_list = Menu.objects.filter(available=True).order_by("-id")
+    query_list = Menu.objects.filter(available=True)
     category = Categories.objects.all()
     
     query = request.GET.get("q")   

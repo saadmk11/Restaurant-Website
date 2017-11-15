@@ -39,6 +39,9 @@ class Menu(models.Model):
     height_field = models.IntegerField(default=600)
     width_field = models.IntegerField(default=600)
 
+    class Meta:
+        ordering = ["-id"]
+
     def __unicode__(self):
         return self.item
 
