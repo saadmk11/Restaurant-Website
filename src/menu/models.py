@@ -2,6 +2,7 @@
 from __future__ import unicode_literals
 from django.db import models
 from django.core.urlresolvers import reverse
+from django.utils.text import slugify
 # Create your models here.
 
 class Categories(models.Model):
@@ -13,6 +14,20 @@ class Categories(models.Model):
                                 width_field="width_field")
     height_field = models.IntegerField(default=600)
     width_field = models.IntegerField(default=600)
+
+    def _get_unique_slug(self):
+        slug = slugify(self.cat_name)
+        unique_slug = slug
+        num = 1
+        while Categories.objects.filter(slug=unique_slug).exists():
+            unique_slug = '{}-{}'.format(slug, num)
+            num += 1
+        return unique_slug
+ 
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = self._get_unique_slug()
+        super(Categories, self).save()
 
     def __unicode__(self):
         return self.cat_name
@@ -41,6 +56,20 @@ class Menu(models.Model):
 
     class Meta:
         ordering = ["-id"]
+
+    def _get_unique_slug(self):
+        slug = slugify(self.item)
+        unique_slug = slug
+        num = 1
+        while Menu.objects.filter(slug=unique_slug).exists():
+            unique_slug = '{}-{}'.format(slug, num)
+            num += 1
+        return unique_slug
+ 
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = self._get_unique_slug()
+        super(Menu, self).save()
 
     def __unicode__(self):
         return self.item
