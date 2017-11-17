@@ -12,8 +12,16 @@ class Categories(models.Model):
                                 blank=True, 
                                 height_field="height_field", 
                                 width_field="width_field")
-    height_field = models.IntegerField(default=600)
-    width_field = models.IntegerField(default=600)
+    height_field = models.IntegerField(
+                            default=600, 
+                            null=True, 
+                            blank=True,
+                            )
+    width_field = models.IntegerField(
+                            default=600, 
+                            null=True, 
+                            blank=True,
+                            )
 
     def _get_unique_slug(self):
         slug = slugify(self.cat_name)
@@ -51,8 +59,16 @@ class Menu(models.Model):
                             blank=True, 
                             height_field="height_field", 
                             width_field="width_field")
-    height_field = models.IntegerField(default=600)
-    width_field = models.IntegerField(default=600)
+    height_field = models.IntegerField(
+                            default=600, 
+                            null=True, 
+                            blank=True,
+                            )
+    width_field = models.IntegerField(
+                            default=600, 
+                            null=True, 
+                            blank=True,
+                            )
 
     class Meta:
         ordering = ["-id"]

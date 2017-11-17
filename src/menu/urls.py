@@ -6,8 +6,11 @@ from .views import (menu_list,
     cat_detail,
     )
 from .api import (
+    CategoriesCreateAPIView,
     CategoriesListAPIView,
     CategoriesRetrieveAPIView,
+    CategoriesRetrieveDestroyAPIView,
+    CategoriesRetrieveUpdateAPIView,
     MenuCreateAPIView, 
     MenuListAPIView, 
     MenuRetrieveAPIView, 
@@ -28,4 +31,9 @@ urlpatterns = [
     url(r'^api/(?P<slug>[\w-]+)/destroy/$', MenuRetrieveDestroyAPIView.as_view(), name="menu_destroy_api"),
     #category api
     url(r'^category/api/$', CategoriesListAPIView.as_view(), name="cat_list_api"),
+    url(r'^category/api/create/$', CategoriesCreateAPIView.as_view(), name="cat_create_api"),
+    url(r'^category/api/(?P<slug>[\w-]+)/$', CategoriesRetrieveAPIView.as_view(), name="cat_detail_api"),
+    url(r'^category/api/(?P<slug>[\w-]+)/update/$', CategoriesRetrieveUpdateAPIView.as_view(), name="cat_update_api"),
+    url(r'^category/api/(?P<slug>[\w-]+)/destroy/$', CategoriesRetrieveDestroyAPIView.as_view(), name="cat_destroy_api"),
+
 ]
