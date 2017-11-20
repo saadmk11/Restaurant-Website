@@ -26,6 +26,8 @@ urlpatterns = [
     url(r'^contact/$', contact, name="contact_us"),
     url(r'^admin/', admin.site.urls),
     url(r'^menu/', include('menu.urls', namespace='menu')),
+    url(r'^api-auth/', include('rest_framework.urls',
+                               namespace='rest_framework')),
 
 
 ]
