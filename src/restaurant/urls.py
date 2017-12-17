@@ -20,19 +20,25 @@ from django.contrib import admin
 from index.views import home, about
 from contact.views import contact
 
+
 urlpatterns = [
     url(r'^$', home, name="home"),
     url(r'^about/$', about, name="about"),
     url(r'^contact/$', contact, name="contact_us"),
     url(r'^admin/', admin.site.urls),
     url(r'^menu/', include('menu.urls', namespace='menu')),
-    url(r'^api-auth/', include('rest_framework.urls',
-                               namespace='rest_framework')),
-
-
+    url(r'^api-auth/', include(
+        'rest_framework.urls',
+        namespace='rest_framework'
+        )),
 ]
 
-
 if settings.DEBUG:
-    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    urlpatterns += static(
+        settings.STATIC_URL,
+        document_root=settings.STATIC_ROOT
+        )
+    urlpatterns += static(
+        settings.MEDIA_URL,
+        document_root=settings.MEDIA_ROOT
+        )

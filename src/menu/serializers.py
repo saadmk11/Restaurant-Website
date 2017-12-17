@@ -1,6 +1,6 @@
 from rest_framework.serializers import (
-    ModelSerializer, 
-    HyperlinkedIdentityField, 
+    ModelSerializer,
+    HyperlinkedIdentityField,
     SerializerMethodField,
     )
 
@@ -17,12 +17,12 @@ class MenuListSerializer(ModelSerializer):
     class Meta:
         model = Menu
         fields = [
-            "id", 
-            "item", 
-            "category", 
-            "price", 
+            "id",
+            "item",
+            "category",
+            "price",
             "url"
-        ]
+            ]
 
     def get_category(self, obj):
         return obj.category.cat_name
@@ -30,16 +30,17 @@ class MenuListSerializer(ModelSerializer):
 
 class CategoriesSerializer(ModelSerializer):
     url = HyperlinkedIdentityField(
-        view_name="menu:cat_detail_api",
-        lookup_field="slug",
-        )
+              view_name="menu:cat_detail_api",
+              lookup_field="slug",
+              )
+
     class Meta:
         model = Categories
         fields = [
-            "cat_name", 
+            "cat_name",
             "cat_img",
             "url",
-        ]
+            ]
 
 
 class CategoriesDetailSerializer(ModelSerializer):
@@ -48,18 +49,18 @@ class CategoriesDetailSerializer(ModelSerializer):
     class Meta:
         model = Categories
         fields = [
-            "cat_name", 
+            "cat_name",
             "cat_img",
             "menu_set",
-        ]
+            ]
 
 
 class MenuCreateUpdateDeleteSerializer(ModelSerializer):
     class Meta:
         model = Menu
         fields = [
-            "item", 
-            "category", 
+            "item",
+            "category",
             "price",
             "info",
             "policy",
@@ -68,7 +69,7 @@ class MenuCreateUpdateDeleteSerializer(ModelSerializer):
             "available",
             "featured",
             "img",
-        ]
+            ]
 
 
 class MenuDetailSerializer(ModelSerializer):
@@ -78,16 +79,15 @@ class MenuDetailSerializer(ModelSerializer):
         model = Menu
         fields = [
             "id",
-            "item", 
-            "category", 
+            "item",
+            "category",
             "price",
             "info",
             "policy",
             "ingredients",
             "nutrition",
             "img",
-        ]
+            ]
 
     def get_category(self, obj):
         return obj.category.cat_name
-        

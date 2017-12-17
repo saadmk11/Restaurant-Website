@@ -6,6 +6,7 @@ from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 
+
 def contact(request):
     info = ContactInfo.objects.all()
     form = ContactForm(request.POST or None)
@@ -20,5 +21,5 @@ def contact(request):
         return redirect('home')
     context = {"info": info,
                "form": form
-                }
+               }
     return render(request, "contact/contact.html", context)
